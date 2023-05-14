@@ -1,0 +1,12 @@
+
+        bar: function void (inherit c: auto){
+            c = 1.1;
+        }
+        
+        foo: function void (a: integer, b: auto) inherit bar {
+                preventDefault();
+                c = 1;
+            }
+
+        main: function void () {}
+        

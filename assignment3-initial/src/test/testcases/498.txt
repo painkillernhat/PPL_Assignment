@@ -1,0 +1,6 @@
+column, category, command: auto;
+        print: function string(a: string) {return a;}
+        main: function void() {
+            print("FROM ", column, "\n", "SELECT ", category, "\n", "WHERE ", command[0,0], command[0,1], command[1,0], command[1,1], "\n");
+            return;
+        }

@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(foo, IntegerType, [Param(a, IntegerType)], None, BlockStmt([ReturnStmt(FuncCall(foo, [FuncCall(printInteger, [Id(a)]), Id(b)]))]))
+])

@@ -1,0 +1,12 @@
+check: function boolean(s: string) {
+    if(length() != 0) return false;
+    for(i = 0, i < s::length(), i+1) {
+        if(!((s[i] >= 0) && (s[i] <= 9))) return false;
+    }
+    return true;
+}
+count: function integer(ftime: string, etime: string) {
+    start: integer = 3600*((ftime[0]-0)*10 +ftime[1]-0) + 60*((ftime[3]-0)*10 + ftime[4]-0) + (ftime[6]-0)*10 + ftime[7]-0;
+    end: integer = 3600*((etime[0]-0)*10 +etime[1]-0) + 60*((etime[3]-0)*10 + etime[4]-0) + (etime[6]-0)*10 + etime[7]-0;
+    return end - start;
+}

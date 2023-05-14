@@ -1,0 +1,20 @@
+__init__: function auto (self: auto) {return __init__(1);}
+        main: function void() {
+            if(__init__(1) == "==") {
+                self = "==";
+            }
+            else {
+                if(__init__(1) == "<=") {
+                    self = "<=";
+                }
+                else {
+                    if (__init__(1) == "[,]") {
+                        self = "[,]";
+                    }
+                    else {
+                        self = "-";
+                    }
+                }
+            }
+            return __init__(1);
+        }

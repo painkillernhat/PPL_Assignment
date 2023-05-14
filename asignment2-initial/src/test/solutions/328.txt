@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(goo, VoidType, [], None, BlockStmt([ReturnStmt(ArrayLit([IntegerLit(1), StringLit(HCMUT), Id(True)]))]))
+])

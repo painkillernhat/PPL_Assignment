@@ -1,0 +1,25 @@
+romanToInt: function integer(s: string) {
+        cnt: integer=0;
+        m: array [100,100] of integer;
+        m[1]=1;
+        m[5]=5;
+        m[10]=10;
+        m[50]=50;
+        m[100]=100;
+        m[500]=500;
+        m[1000]=1000;
+        for(i=0, i<size(), i+1) {
+            if(i!=size()-1){
+                if(m[s[i]]<m[s[i+1]]){
+                    cnt= cnt - m[s[i]];
+                }
+                else{
+                    cnt= cnt + m[s[i]];
+                }
+            }
+            else{
+                cnt= cnt + m[s[i]];
+            }
+        }
+        return cnt;
+    }

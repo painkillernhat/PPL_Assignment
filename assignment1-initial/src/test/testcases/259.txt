@@ -1,0 +1,12 @@
+
+            main: function void() {
+                while(a != 0) {
+                    do {
+                        if(a == 5) {
+                            a = a + 1;
+                        }
+                    }
+                    while(a != 10);
+                }
+            }
+        

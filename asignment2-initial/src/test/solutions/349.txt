@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(romanToInt, IntegerType, [Param(s, StringType)], None, BlockStmt([VarDecl(ans, IntegerType, IntegerLit(0)), VarDecl(mp, ArrayType([7], StringType), ArrayLit([StringLit(I), StringLit(V), StringLit(X), StringLit(L), StringLit(C), StringLit(D), StringLit(M)])), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), FuncCall(size, [])), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([IfStmt(BinExpr(<, ArrayCell(mp, [ArrayCell(s, [Id(i)])]), ArrayCell(mp, [ArrayCell(s, [BinExpr(+, Id(i), IntegerLit(1))])])), BlockStmt([AssignStmt(Id(ans), BinExpr(-, Id(ans), ArrayCell(mp, [ArrayCell(s, [Id(i)])])))]), BlockStmt([AssignStmt(Id(ans), BinExpr(+, Id(ans), ArrayCell(mp, [ArrayCell(s, [Id(i)])])))]))])), ReturnStmt(Id(ans))]))
+])

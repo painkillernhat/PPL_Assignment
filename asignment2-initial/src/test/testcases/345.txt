@@ -1,0 +1,33 @@
+countSearchRec: function integer (r: array [2,2] of integer, key: array [3,3,3] of integer) inherit SymbolTable
+{
+    if (!r)
+    {
+        return 0;
+    }
+    num_comp: integer = 1;
+    if (compareData(r, _key) == -1)
+    {
+        num_comp = num_comp + 1;
+        if (!r)
+        {
+            res: integer = num_comp;
+            num_comp = 1;
+            return res;
+        }
+        return countSearchRec(r, _key);
+    }
+    if (compareData(r, _key) == 1)
+    {
+        num_comp = num_comp + 1;
+        if (!r)
+        {
+            res: integer = num_comp;
+            num_comp = 1;
+            return res;
+        }
+        return countSearchRec(r, _key);
+    }
+    res: integer = num_comp;
+    num_comp = 1;
+    return res;
+}

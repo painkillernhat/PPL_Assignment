@@ -1,0 +1,9 @@
+
+        nums: array[2] of integer = {1,2};
+        print: function integer(a: integer) {
+            return a;
+        }
+        main: function void() {
+            print(nums[0]);
+            print(nums[1]);
+        }

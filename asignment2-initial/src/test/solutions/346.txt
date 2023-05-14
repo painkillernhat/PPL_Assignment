@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(calculate, VoidType, [], None, BlockStmt([VarDecl(sum, FloatType, IntegerLit(0)), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), IntegerLit(4)), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([AssignStmt(Id(sum), BinExpr(::, BinExpr(+, Id(sum), ArrayCell(college_score, [Id(i)])), Id(assignment))), AssignStmt(Id(sum), BinExpr(::, BinExpr(+, Id(sum), ArrayCell(college_score, [Id(i)])), Id(exam))), AssignStmt(Id(sum), BinExpr(::, BinExpr(+, Id(sum), ArrayCell(college_score, [Id(i)])), Id(test)))])), VarDecl(average_score, FloatType, BinExpr(/, BinExpr(*, Id(sum), FloatLit(1.0)), IntegerLit(12)))]))
+])

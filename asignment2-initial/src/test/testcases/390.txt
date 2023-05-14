@@ -1,0 +1,4 @@
+singleNumber: function integer(nums: array[100] of integer)
+    {
+        return accumulate(nums::begin(), nums::end(), 0, {{}});
+    }

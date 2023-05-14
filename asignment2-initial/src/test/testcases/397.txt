@@ -1,0 +1,8 @@
+main: function void() {
+            for (i = foo(), i < goo(), i + hoo()) {
+                do {
+                    i = zoo();
+                }
+                while(!zoo(!foo(!goo(-hoo()))));
+            }
+        }

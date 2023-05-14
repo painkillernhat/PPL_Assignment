@@ -1,0 +1,3 @@
+Program([
+	VarDecl(checkop3, BooleanType, BinExpr(||, BinExpr(&&, UnExpr(!, BooleanLit(True)), UnExpr(!, BooleanLit(False))), IntegerLit(11)))
+])

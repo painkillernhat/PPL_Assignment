@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(mySqrt, IntegerType, [Param(x, IntegerType)], None, BlockStmt([IfStmt(BinExpr(==, Id(x), IntegerLit(0)), ReturnStmt(Id(x))), VarDecl(first, IntegerType, IntegerLit(1)), VarDecl(last, IntegerType, Id(x)), WhileStmt(BinExpr(<=, Id(first), Id(last)), BlockStmt([VarDecl(mid, IntegerType, BinExpr(+, Id(first), BinExpr(/, BinExpr(-, Id(last), Id(first)), IntegerLit(2)))), IfStmt(BinExpr(==, Id(mid), BinExpr(/, Id(x), Id(mid))), ReturnStmt(Id(mid)), BlockStmt([IfStmt(BinExpr(>, Id(mid), BinExpr(/, Id(x), Id(mid))), BlockStmt([AssignStmt(Id(last), BinExpr(-, Id(mid), IntegerLit(1)))]), BlockStmt([AssignStmt(Id(first), BinExpr(+, Id(mid), IntegerLit(1)))]))]))])), ReturnStmt(Id(last))]))
+])

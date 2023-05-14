@@ -1,0 +1,3 @@
+goo: function void() {
+                return arr[2::3];
+            }

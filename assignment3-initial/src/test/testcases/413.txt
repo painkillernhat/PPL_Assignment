@@ -1,0 +1,2 @@
+checkop1: auto = 1 != true + "2"::"-3";
+        main: function void() {}

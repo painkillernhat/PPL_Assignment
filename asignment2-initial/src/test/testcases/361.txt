@@ -1,0 +1,13 @@
+ longestCommonPrefix: function string(strs: array [100] of string) {
+    // sort the array because its rearrange alphabetical order
+   sort();
+
+
+  for (i = 0, i < strs[0]::length, i % 10) {
+    if (strs[0,i] != strs[strs::length - 1,i]){
+return strs[0]::substr(0, i);
+    } 
+  }
+
+  return strs[0];  
+}

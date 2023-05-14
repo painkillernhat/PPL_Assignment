@@ -1,0 +1,8 @@
+foo: function integer (a: boolean, b: integer)
+            {
+                if (( 1 != true) && ( b == a))
+                {
+                
+                }
+            }
+            main: function void() {}

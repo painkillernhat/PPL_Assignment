@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(longestCommonPrefix, StringType, [Param(strs, ArrayType([100], StringType))], None, BlockStmt([CallStmt(sort, ), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(::, BinExpr(<, Id(i), ArrayCell(strs, [IntegerLit(0)])), Id(length)), BinExpr(%, Id(i), IntegerLit(10)), BlockStmt([IfStmt(BinExpr(!=, ArrayCell(strs, [IntegerLit(0), Id(i)]), ArrayCell(strs, [BinExpr(::, Id(strs), BinExpr(-, Id(length), IntegerLit(1))), Id(i)])), BlockStmt([ReturnStmt(BinExpr(::, ArrayCell(strs, [IntegerLit(0)]), FuncCall(substr, [IntegerLit(0), Id(i)])))]))])), ReturnStmt(ArrayCell(strs, [IntegerLit(0)]))]))
+])

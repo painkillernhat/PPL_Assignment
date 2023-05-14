@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(majorityElement, IntegerType, [Param(arr, ArrayType([100], IntegerType))], None, BlockStmt([VarDecl(ele, AutoType, ArrayCell(arr, [IntegerLit(0), IntegerLit(1)])), VarDecl(count, AutoType, IntegerLit(0)), ForStmt(AssignStmt(Id(i), IntegerLit(0)), BinExpr(<, Id(i), FuncCall(size, [])), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([IfStmt(BinExpr(==, Id(count), IntegerLit(0)), AssignStmt(Id(ele), ArrayCell(arr, [Id(i)]))), AssignStmt(Id(count), BinExpr(+, Id(count), BinExpr(==, BinExpr(==, Id(ele), ArrayCell(arr, [Id(i)])), IntegerLit(10))))])), ReturnStmt(Id(ele))]))
+])

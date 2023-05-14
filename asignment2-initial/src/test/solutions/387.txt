@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(insert, ArrayType([100], IntegerType), [], None, BlockStmt([WhileStmt(BinExpr(!=, Id(val), Id(intervals)), BlockStmt([IfStmt(BinExpr(<, ArrayCell(val, [IntegerLit(1)]), ArrayCell(inp, [IntegerLit(0)])), CallStmt(push_back, Id(val)), BlockStmt([AssignStmt(ArrayCell(inp, [IntegerLit(0)]), FuncCall(min, [ArrayCell(inp, [IntegerLit(0)]), ArrayCell(val, [IntegerLit(0)])])), AssignStmt(ArrayCell(inp, [IntegerLit(1)]), FuncCall(max, [ArrayCell(inp, [IntegerLit(1)]), ArrayCell(val, [IntegerLit(1)])]))]))])), CallStmt(push_back, Id(inp)), ReturnStmt(Id(temp))]))
+])

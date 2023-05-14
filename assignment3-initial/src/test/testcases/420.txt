@@ -1,0 +1,4 @@
+foo: function integer(a: integer) {
+                return foo(readInteger(a));
+            }
+            main: function void () {}

@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(reverse, IntegerType, [InheritParam(x, IntegerType)], None, BlockStmt([VarDecl(r, IntegerType, IntegerLit(0)), WhileStmt(Id(x), BlockStmt([AssignStmt(Id(r), BinExpr(+, BinExpr(*, Id(r), IntegerLit(10)), BinExpr(%, Id(x), IntegerLit(10)))), AssignStmt(Id(x), BinExpr(/, Id(x), IntegerLit(10)))])), IfStmt(BinExpr(>, Id(r), BinExpr(||, Id(INT_MAX), BinExpr(<, Id(r), Id(INT_MIN)))), ReturnStmt(IntegerLit(0))), ReturnStmt(FuncCall(int, [Id(r)]))]))
+])

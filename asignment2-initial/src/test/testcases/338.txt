@@ -1,0 +1,11 @@
+dfs: function void(inherit out u: integer) {
+            vis[u] = true;
+            for (i = adj[u], i >= 0, i - 1){ if (flag[i]) {
+                v: integer = e[i] * get_v(u);
+                if (vis[v]) {
+                    continue;
+                }
+                dfs(v);
+            }
+            }
+        }

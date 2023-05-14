@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(merge, ArrayType([100], IntegerType), [Param(a, ArrayType([100], IntegerType)), Param(b, ArrayType([100], IntegerType))], None, BlockStmt([ReturnStmt(ArrayLit([FuncCall(min, [ArrayCell(a, [IntegerLit(0)]), ArrayCell(b, [IntegerLit(0)])]), FuncCall(max, [ArrayCell(a, [IntegerLit(1)]), ArrayCell(b, [IntegerLit(1)])])]))]))
+])

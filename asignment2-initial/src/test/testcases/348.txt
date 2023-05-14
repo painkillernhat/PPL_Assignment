@@ -1,0 +1,14 @@
+isPalindrome: function boolean(x: integer) {
+       y: integer=x;
+        if(x<0) return false;
+            
+        temp: integer=0;
+        while(y)
+        {
+            temp=temp*10+y%10;
+            y= y/10;
+        }
+        if(temp==x) return true;
+        else return false;
+     
+    }

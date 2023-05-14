@@ -1,0 +1,19 @@
+main: function void() {
+            if(__init___(self) == "==") {
+                self = "==";
+            }
+            else {
+                if(__init__(self) == "<=") {
+                    self = "<=";
+                }
+                else {
+                    if (__init__(self) == "[,]") {
+                        self = "[,]";
+                    }
+                    else {
+                        self = "-";
+                    }
+                }
+            }
+            return __init__(self);
+        }

@@ -1,0 +1,36 @@
+change: function string(input: string) {
+    len: float = length();
+    end: string = "";
+    for(i = 0, i < len, i + 1) {
+        if((input[i] >= 65) && (input[i] <= 90)) {
+            end = end + input[i];
+        }
+        else {
+            if(input[i] == "#") {
+                if(i == len - 1) break;
+                j: integer = i + 1;
+                while((input[j] >= 65) && (input[j] <= 90)) {
+                    end = end + input[j];
+                    j = j + 1;
+                }
+            i = j - 1;
+            }
+        }
+
+        if(input[i] == "@") {
+            if(i == len) break;
+            j: integer = i + 1;
+            temp: string = "";
+            while((input[j] != "#") && (input[j] != "@") && (input[j] != "\n")) {
+                temp = input[j] + temp;
+                j = j + 1;
+            }
+            end = end + temp;
+            i = j - 1;
+        }
+        else {
+            break;
+        }
+    }
+    return end;
+}

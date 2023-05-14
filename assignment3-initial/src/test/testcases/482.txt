@@ -1,0 +1,2 @@
+main: function void () {
+        a,b,c,d,_,__,__init__: auto = 1,2," ", "\t", "\r", {{1,3}}, ":";}

@@ -1,0 +1,6 @@
+foo: function float(foo: integer) {
+            return foo;
+        }
+        main: function void () {
+            return;
+        }

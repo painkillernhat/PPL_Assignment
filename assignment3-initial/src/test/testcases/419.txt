@@ -1,0 +1,5 @@
+
+        a: float;
+            main: function void() {
+                a = a + readFloat();
+            }

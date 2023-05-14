@@ -1,0 +1,7 @@
+fact: function void(out a: integer) {
+                /* do sth */
+                {
+                    // TODO
+                }
+            }
+            main: function void() {}

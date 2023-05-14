@@ -1,0 +1,5 @@
+ 
+            goo: function void() {
+                return !0 || !11 || 1 || 11;
+            }
+        

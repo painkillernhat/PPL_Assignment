@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([CallStmt(readint, ), CallStmt(printint, ), CallStmt(readfloat, ), CallStmt(printfloat, ), CallStmt(readbool, ), CallStmt(printbool, ), CallStmt(readstr, )]))
+])

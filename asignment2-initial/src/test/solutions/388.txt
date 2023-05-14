@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(singleNumber, IntegerType, [Param(nums, IntegerType)], Expressions, BlockStmt([VarDecl(a, ArrayType([5, 5, 5, 5, 5], IntegerType)), WhileStmt(BinExpr(<, Id(x), Id(nums)), AssignStmt(ArrayCell(a, [Id(x)]), BinExpr(+, ArrayCell(a, [Id(x)]), IntegerLit(1)))), WhileStmt(BinExpr(<, Id(z), Id(a)), IfStmt(BinExpr(::, Id(z), BinExpr(==, Id(second), IntegerLit(1))), ReturnStmt(BinExpr(::, Id(z), Id(first))))), ReturnStmt(UnExpr(-, IntegerLit(1)))]))
+])

@@ -1,0 +1,12 @@
+mySqrt: function integer(x: integer) {
+        i: float = 0;
+        while(i*i <=x)
+        {
+            if( (i*i) <= x && ((i+1)*(i+1) > x))
+                return i;
+                i = i + 1;
+            break;
+        }
+        return 0;
+    }
+    main: function void() {}

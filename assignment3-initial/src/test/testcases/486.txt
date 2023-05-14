@@ -1,0 +1,5 @@
+a: string;
+            b: boolean = 0;
+            c: string;
+            d: string = a::c;
+            main: function void() {}

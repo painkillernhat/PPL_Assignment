@@ -1,0 +1,5 @@
+Program([
+	FuncDecl(sort, IntegerType, [Param(a, IntegerType), Param(b, IntegerType)], None, BlockStmt([ReturnStmt(BinExpr(-, FuncCall(int, [Id(a)]), FuncCall(int, [Id(b)])))]))
+	FuncDecl(majorityElement, IntegerType, [Param(nums, ArrayType([100], IntegerType)), Param(numsSize, IntegerType)], None, BlockStmt([CallStmt(qsort, Id(nums), Id(numsSize), FuncCall(sizeof, [Id(int)]), Id(sort)), ReturnStmt(ArrayCell(nums, [BinExpr(/, Id(numsSize), IntegerLit(2))]))]))
+	VarDecl(a, AutoType, FuncCall(sort, []))
+])

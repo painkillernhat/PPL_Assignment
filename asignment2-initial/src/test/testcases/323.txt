@@ -1,0 +1,7 @@
+main: function void() {
+                if (a != 10)
+                    if (a != 9)
+                        if (a != 8)
+                            if (a != 7)
+                                return a;
+            }

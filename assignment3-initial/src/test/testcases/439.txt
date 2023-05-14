@@ -1,0 +1,28 @@
+main: function void()
+{
+    m,n: integer;
+    i,j,w: integer;
+    host, temp: array [100] of integer;
+    idx: integer;
+    for (idx = 0, idx < n + 1, idx + 1) { push_back(0); temp_back(0);}
+    for (idx = 2, idx < m + 2, idx + 1) {
+        connect_t(i,j,w);
+        data(t);
+    }
+    k: integer = 0;
+    for (i = 0, i < k, i + 1){
+        idx: integer;
+        host[idx] = 1;
+        temp[idx] = 1;
+    }
+    for (a = 0, a < size() - 1, a + 1) {
+        connect_t(0, 0, 0);
+        if (data[a] > data[a + 1]) {
+            t = data[a];
+            data[a] = data[a + 1];
+            data[a + 1] = t;
+        }
+    }
+    process(data, host, temp);
+    return;
+}

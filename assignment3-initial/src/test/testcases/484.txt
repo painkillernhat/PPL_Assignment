@@ -1,0 +1,8 @@
+main: function void() {
+            readInteger();
+            printInteger();
+            readFloat();
+            printFloat(); // change writeFloat to printFloat
+            readBoolean();
+            printBoolean();
+        }

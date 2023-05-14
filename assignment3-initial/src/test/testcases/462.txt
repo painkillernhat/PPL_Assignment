@@ -1,0 +1,9 @@
+removeElement: function integer(nums: array [100] of integer, val: integer) {
+        j: integer=0;
+        for(nums[i]=0, nums[i]< nums::size(), nums[i] + 1){
+            if(nums[i]!=val){
+                nums[j+1]=nums[i];
+            }
+        }
+        return j;        
+    }

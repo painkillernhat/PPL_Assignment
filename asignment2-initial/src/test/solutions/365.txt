@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(searchInsert, IntegerType, [Param(nums, ArrayType([100], IntegerType)), Param(x, IntegerType)], None, BlockStmt([VarDecl(hi, IntegerType, BinExpr(::, Id(nums), BinExpr(-, FuncCall(size, []), IntegerLit(1)))), VarDecl(lo, IntegerType, IntegerLit(0)), WhileStmt(BinExpr(>=, Id(hi), Id(lo)), BlockStmt([VarDecl(mid, FloatType, BinExpr(/, BinExpr(+, Id(hi), Id(lo)), IntegerLit(2))), IfStmt(BinExpr(==, ArrayCell(nums, [Id(mid)]), Id(target)), ReturnStmt(Id(mid)), BlockStmt([IfStmt(BinExpr(>, ArrayCell(nums, [Id(mid)]), Id(target)), AssignStmt(Id(hi), BinExpr(-, Id(mid), IntegerLit(1))), AssignStmt(Id(lo), BinExpr(+, Id(mid), IntegerLit(1))))]))])), ReturnStmt(Id(lo))]))
+])

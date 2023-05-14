@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(singleNumber, IntegerType, [Param(nums, ArrayType([100], IntegerType))], None, BlockStmt([ReturnStmt(FuncCall(accumulate, [BinExpr(::, Id(nums), FuncCall(begin, [])), BinExpr(::, Id(nums), FuncCall(end, [])), IntegerLit(0), ArrayLit([ArrayLit([])])]))]))
+])

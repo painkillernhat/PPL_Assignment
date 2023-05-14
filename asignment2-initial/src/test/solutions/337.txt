@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(check, BooleanType, [], None, BlockStmt([CallStmt(fill, BinExpr(+, Id(vis), IntegerLit(1)), BinExpr(+, BinExpr(+, Id(vis), Id(n)), IntegerLit(1)), BooleanLit(False)), CallStmt(dfs, ArrayCell(node, [IntegerLit(1)])), ForStmt(AssignStmt(Id(i), IntegerLit(1)), BinExpr(<=, Id(i), Id(num_node)), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([IfStmt(UnExpr(!, ArrayCell(vis, [ArrayCell(node, [Id(i)])])), BlockStmt([ReturnStmt(BooleanLit(False))]))])), ReturnStmt(BooleanLit(True))]))
+])

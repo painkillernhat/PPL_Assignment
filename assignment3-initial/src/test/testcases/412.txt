@@ -1,0 +1,2 @@
+checkop1: auto = 3 * 5 % 6 && 1 >= 0;
+        main: function void() {}

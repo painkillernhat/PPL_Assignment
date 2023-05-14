@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(twoSum, ArrayType([100], IntegerType), [Param(self, IntegerType), Param(nums, ArrayType([100], IntegerType)), Param(target, IntegerType)], None, BlockStmt([AssignStmt(Id(d), ArrayLit([])), ForStmt(AssignStmt(Id(i), Id(j)), BinExpr(<, Id(j), FuncCall(enumerate, [Id(nums)])), BinExpr(+, Id(i), IntegerLit(1)), BlockStmt([AssignStmt(Id(r), BinExpr(-, Id(target), Id(j))), IfStmt(BinExpr(<=, Id(r), Id(d)), ReturnStmt(ArrayCell(a, [ArrayCell(d, [Id(r)]), Id(i)]))), AssignStmt(ArrayCell(d, [Id(j)]), Id(i))]))]))
+])

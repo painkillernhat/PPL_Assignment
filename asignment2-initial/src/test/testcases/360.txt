@@ -1,0 +1,9 @@
+ longestCommonPrefix: function string(strs: array [100] of string) {
+        ans: integer = s[0] * length(); n = size();
+        for(i=1, i<n, i % 10){
+            j: integer = 0;
+            while(j < s[i] * length() && (s[i,j] == s[0,j])) j = j + 1;
+            ans = min(ans, j);
+        }
+        return s[0] * substr(0, ans);
+    }

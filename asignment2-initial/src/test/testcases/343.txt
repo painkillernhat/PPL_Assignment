@@ -1,0 +1,37 @@
+main: function integer()
+{
+    type: string;
+    total, incorrect: integer = 0, 0;
+    do {
+        if(type == "#") continue;
+        else {
+            total = total + 1;
+            fnum, tnum, date, ftime, etime: string;
+            if((!check(fnum)) || (!check(tnum))) incorrect = incorrect + 1; 
+            calls[fnum] = calls[fnum] + 1;
+            time[fnum] = time[fnum] + count(ftime, etime);
+        }
+    }
+    while(type != "#");
+    
+    check: integer = 0;
+    do {
+        if(type == "#") break;
+        else{
+            num: string;
+            if(type == "?check_phone_number") {
+                if(incorrect) return 1;
+                else return 0;
+            }
+            if(type == "?number_calls_from") {
+                printString(calls[num]);
+            }
+            if(type == "?number_total_calls") printInteger(total);
+            if(type == "?count_time_calls_from") {
+                return time[num];
+            }
+        }
+    }
+    while(type != "#");
+    return 0;
+}

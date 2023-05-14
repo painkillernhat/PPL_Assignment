@@ -1,0 +1,4 @@
+merge: function array [100] of integer(a: array [100] of integer, b: array [100] of integer)
+    {
+        return {min(a[0],b[0]),max(a[1],b[1])};
+    }  

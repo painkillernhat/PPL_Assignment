@@ -1,0 +1,15 @@
+romanToInt: function integer(s: string) {
+        ans: integer=0;
+        mp: array [7] of string = {"I","V","X","L","C","D","M"};
+
+    for(i=0, i<size(), i+1){
+        if(mp[s[i]] < mp[s[i+1]]){
+            //for cases such as IV,CM, XL, etc...
+            ans=ans-mp[s[i]];
+        }
+        else{
+            ans=ans+mp[s[i]];
+        }
+    }
+        return ans;
+    }

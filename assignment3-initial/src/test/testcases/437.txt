@@ -1,0 +1,10 @@
+bar: function integer(inherit x: float) {}
+            foo: function integer (a: integer, b: auto) inherit bar 
+            {
+                preventDefault();
+                if (a == 1)
+                {
+                    b: integer;
+                }
+            }
+            main: function void () {}

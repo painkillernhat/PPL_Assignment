@@ -1,0 +1,4 @@
+goo: function void() {
+                return {1, "HCMUT", True};
+            }
+            main: function void() {}

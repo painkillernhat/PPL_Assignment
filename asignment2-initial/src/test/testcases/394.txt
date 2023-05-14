@@ -1,0 +1,8 @@
+majorityElement: function integer(arr: array [100] of integer) {
+        ele, count: auto = arr[0,1], 0;
+        for(i=0, i<size(), i+1){
+            if(count==0) ele=arr[i];
+            count = count + ((ele==arr[i])== 10);
+        }
+        return ele;
+    }

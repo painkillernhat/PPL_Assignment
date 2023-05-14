@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(print, IntegerType, [Param(n, AutoType)], None, BlockStmt([CallStmt(printInteger, Id(n))]))
+])

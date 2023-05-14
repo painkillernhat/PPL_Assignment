@@ -1,0 +1,3 @@
+isOverlap: function boolean(a: array [100] of integer, b: array [100] of integer){
+        return min(a[1], b[1]) - max(a[0], b[0]) >= 0;
+    }

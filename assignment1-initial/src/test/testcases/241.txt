@@ -1,0 +1,2 @@
+var1: continue = 1;
+        

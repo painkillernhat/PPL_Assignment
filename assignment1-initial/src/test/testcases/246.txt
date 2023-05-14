@@ -1,0 +1,8 @@
+
+            fact: function void(out inherit a: integer) {
+                /* do sth */
+                {
+                    // TODO
+                }
+            } 
+        

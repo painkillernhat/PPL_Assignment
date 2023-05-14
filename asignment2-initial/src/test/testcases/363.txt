@@ -1,0 +1,10 @@
+removeElement: function integer(nums: array [100] of integer, val: integer) {
+    j: integer = 0; 
+    while(x % v){
+        if(x!=val){
+            v[j]=x;
+            j = j + 1;
+        }
+    }
+    return j;
+}  

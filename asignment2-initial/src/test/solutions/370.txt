@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(myPow, FloatType, [Param(x, FloatType), Param(n, IntegerType)], None, BlockStmt([IfStmt(BinExpr(==, Id(n), IntegerLit(0)), BlockStmt([ReturnStmt(FloatLit(1.0))])), VarDecl(res, FloatType, FloatLit(1.0)), VarDecl(p, IntegerType, FuncCall(abs, [Id(n)])), WhileStmt(BinExpr(>, Id(p), IntegerLit(0)), BlockStmt([IfStmt(BinExpr(==, BinExpr(%, Id(p), IntegerLit(2)), IntegerLit(1)), BlockStmt([AssignStmt(Id(res), BinExpr(*, Id(res), Id(x)))])), AssignStmt(Id(x), BinExpr(*, Id(x), Id(x))), AssignStmt(Id(p), BinExpr(/, Id(p), IntegerLit(2)))])), IfStmt(BinExpr(<, Id(n), IntegerLit(0)), BlockStmt([ReturnStmt(BinExpr(/, FloatLit(1.0), Id(res)))]), BlockStmt([ReturnStmt(Id(res))]))]))
+])

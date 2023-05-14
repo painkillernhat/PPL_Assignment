@@ -1,0 +1,6 @@
+
+            a: float;
+            main: function integer(a) {
+                a = a + 1;
+            }
+        

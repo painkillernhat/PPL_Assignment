@@ -1,0 +1,5 @@
+
+        print: function integer(n: auto) {
+            printInteger(n);
+        }
+        

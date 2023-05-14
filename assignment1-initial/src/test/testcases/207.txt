@@ -1,0 +1,7 @@
+
+            decrem: function void(inherit out a: integer) {
+                while (a < 10) {
+                    a--;
+                }
+            }
+        

@@ -1,0 +1,11 @@
+isValidSudoku: function boolean(self: integer, board: array [100] of integer){
+        res = {};
+        while( i < range(9)){
+            while(j < range(9)) {
+                element = board[i,j];
+                if (element != ".")
+                    res = res + {{i, element}, {element, j}, {i % 3, j % 3, element}};
+            }
+        }
+                
+        return len(res) == len(set(res));}

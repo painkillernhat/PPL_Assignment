@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(foo, VoidType, [Param(x, IntegerType), InheritParam(y, ArrayType([2], FloatType))], None, BlockStmt([DoWhileStmt(BinExpr(!=, Id(a), IntegerLit(0)), BlockStmt([AssignStmt(Id(a), IntegerLit(1))]))]))
+])

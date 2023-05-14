@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(dfs, VoidType, [InheritOutParam(u, IntegerType)], None, BlockStmt([AssignStmt(ArrayCell(vis, [Id(u)]), BooleanLit(True)), ForStmt(AssignStmt(Id(i), ArrayCell(adj, [Id(u)])), BinExpr(>=, Id(i), IntegerLit(0)), BinExpr(-, Id(i), IntegerLit(1)), BlockStmt([IfStmt(ArrayCell(flag, [Id(i)]), BlockStmt([VarDecl(v, IntegerType, BinExpr(*, ArrayCell(e, [Id(i)]), FuncCall(get_v, [Id(u)]))), IfStmt(ArrayCell(vis, [Id(v)]), BlockStmt([ContinueStmt()])), CallStmt(dfs, Id(v))]))]))]))
+])

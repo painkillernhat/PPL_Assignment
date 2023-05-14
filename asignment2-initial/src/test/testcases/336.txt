@@ -1,0 +1,14 @@
+backtrack: function void(i: integer) {
+            if (i >= m) {
+                if (check()) {
+                    res = min(res, cur);
+                }
+                return;
+            }
+            for (j = 0, j < 2, j+1) {
+                flag[i] = j;
+                cur = cur + j * e[i];
+                backtrack(i + 1);
+                cur = cur - j * e[i];
+            }
+        }

@@ -1,0 +1,9 @@
+
+        print: function void(a: string) { return a;}
+        main: function void() {
+            print("------------------");
+            print("| \t \t \t \t |");
+            print("| \r \r \r \r |");
+            print("| \b \b \b \b |");
+            print("------------------");
+        }

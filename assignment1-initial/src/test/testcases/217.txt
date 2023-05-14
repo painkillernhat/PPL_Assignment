@@ -1,0 +1,2 @@
+checkop4: boolean =  !True !False || 11;
+        

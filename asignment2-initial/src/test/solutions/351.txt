@@ -1,0 +1,3 @@
+Program([
+	VarDecl(a, IntegerType, UnExpr(-, UnExpr(-, FuncCall(foo, []))))
+])

@@ -1,0 +1,17 @@
+searchInsert: function integer(nums: array [100] of integer, x: integer) {
+     
+       hi, lo: integer = nums::size()-1, 0;
+       while(hi >= lo)
+       {
+         mid: float = (hi + lo)/2;
+
+         if(nums[mid]==target) return mid;
+    
+         else {if(nums[mid] > target) hi = mid - 1;
+         
+         else lo = mid + 1;
+         }
+       }
+
+      return lo;
+    }

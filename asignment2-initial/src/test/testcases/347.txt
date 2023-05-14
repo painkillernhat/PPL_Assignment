@@ -1,0 +1,9 @@
+  twoSum: function array [100] of integer(self: integer, nums: array [100] of integer, target: integer)
+        {
+        d = {};
+        for (i=j, j < enumerate(nums), i+1){
+            r = target - j;
+            if (r <= d) return a[d[r], i];
+            d[j] = i;
+            }
+        }

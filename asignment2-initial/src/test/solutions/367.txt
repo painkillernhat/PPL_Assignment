@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(isValidSudoku, BooleanType, [Param(self, IntegerType), Param(board, ArrayType([100], IntegerType))], None, BlockStmt([AssignStmt(Id(res), ArrayLit([])), WhileStmt(BinExpr(<, Id(i), FuncCall(range, [IntegerLit(9)])), BlockStmt([WhileStmt(BinExpr(<, Id(j), FuncCall(range, [IntegerLit(9)])), BlockStmt([AssignStmt(Id(element), ArrayCell(board, [Id(i), Id(j)])), IfStmt(BinExpr(!=, Id(element), StringLit(.)), AssignStmt(Id(res), BinExpr(+, Id(res), ArrayLit([ArrayLit([Id(i), Id(element)]), ArrayLit([Id(element), Id(j)]), ArrayLit([BinExpr(%, Id(i), IntegerLit(3)), BinExpr(%, Id(j), IntegerLit(3)), Id(element)])]))))]))])), ReturnStmt(BinExpr(==, FuncCall(len, [Id(res)]), FuncCall(len, [FuncCall(set, [Id(res)])])))]))
+])

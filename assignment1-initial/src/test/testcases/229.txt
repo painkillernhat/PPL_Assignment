@@ -1,0 +1,2 @@
+a: array [4,1] of boolean = {{}};
+        

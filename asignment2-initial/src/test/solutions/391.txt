@@ -1,0 +1,6 @@
+Program([
+	VarDecl(result, IntegerType, FloatLit(1234567890000000.0))
+	VarDecl(MAX_SIZE, AutoType, BinExpr(*, IntegerLit(3), FuncCall(int, [BinExpr(::, Id(Math), FuncCall(pow, [IntegerLit(10), IntegerLit(4)]))])))
+	VarDecl(TOTAL_SIZE, AutoType, BinExpr(+, BinExpr(*, Id(MAX_SIZE), IntegerLit(2)), IntegerLit(1)))
+	VarDecl(numOccurrence, ArrayType([100], BooleanType), ArrayCell(a, [Id(TOTAL_SIZE)]))
+])

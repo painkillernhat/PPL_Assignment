@@ -1,0 +1,8 @@
+
+            main: function void() {
+                do  {
+                    break a;
+                }
+                while (a != 10);
+            }
+        

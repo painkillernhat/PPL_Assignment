@@ -1,0 +1,19 @@
+myPow: function float(x: float, n: integer) {
+    if (n == 0) {
+        return 1.0;
+    }
+    res: float = 1.0;
+    p: integer = abs(n);
+    while (p > 0) {
+        if (p % 2 == 1) {
+            res = res * x;
+        }
+        x = x * x;
+        p = p/ 2;
+    }
+    if (n < 0) {
+        return 1.0 / res;
+    } else {
+        return res;
+    }
+}

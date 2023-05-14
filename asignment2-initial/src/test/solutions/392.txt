@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(isPalindrome, BooleanType, [Param(s, StringType)], None, BlockStmt([IfStmt(UnExpr(!, FuncCall(isalnum, [FuncCall(int, [Id(startChar)])])), BlockStmt([AssignStmt(Id(start), BinExpr(+, Id(start), IntegerLit(1))), ContinueStmt()])), IfStmt(UnExpr(!, FuncCall(isalnum, [FuncCall(int, [Id(lastChar)])])), BlockStmt([AssignStmt(Id(end), BinExpr(-, Id(end), IntegerLit(1))), BreakStmt()])), IfStmt(BinExpr(==, Id(startChar), Id(lastChar)), BlockStmt([AssignStmt(Id(start), BinExpr(+, Id(start), IntegerLit(1))), AssignStmt(Id(end), BinExpr(-, Id(end), IntegerLit(1)))]), BlockStmt([ReturnStmt(BooleanLit(False))])), ReturnStmt(BooleanLit(True))]))
+])

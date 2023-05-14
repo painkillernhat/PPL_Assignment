@@ -1,0 +1,6 @@
+
+        a,b: auto = 4.5, 3;
+        main: function void() {
+                while(a + b != 10)
+                    a = a + 1;
+            }

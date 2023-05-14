@@ -1,0 +1,5 @@
+bar: function integer(a: integer, a: integer) {}
+        foo: function integer (c: integer, d: auto) inherit bar {
+            super(1,2);
+        }
+        main: function void() {}

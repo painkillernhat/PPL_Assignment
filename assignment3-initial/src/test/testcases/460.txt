@@ -1,0 +1,4 @@
+ main: function void() {
+                __: string;
+                _: string = __ <= __;
+            }

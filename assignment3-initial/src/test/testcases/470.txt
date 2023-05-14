@@ -1,0 +1,22 @@
+power: function float(x: float, n: integer){
+        if(n==0){
+            return 1;
+        }
+        return x * power(x, n-1);
+    }
+    myPow: function float() inherit power{
+        super();
+        if (n == 100000) return (x == 1) && -1;
+        if (n == -100000) return (x == 1 || (x == -1)) && 1;
+        num: float = 1;
+        if(n>=0){
+            num = power(x, n);
+        }
+        else{
+            n = -n;
+            num = power(x, n);
+            num = 1.e20/num;
+        }
+        return num;
+    }
+    main: function void() {}

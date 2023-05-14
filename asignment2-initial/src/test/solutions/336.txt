@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(backtrack, VoidType, [Param(i, IntegerType)], None, BlockStmt([IfStmt(BinExpr(>=, Id(i), Id(m)), BlockStmt([IfStmt(FuncCall(check, []), BlockStmt([AssignStmt(Id(res), FuncCall(min, [Id(res), Id(cur)]))])), ReturnStmt()])), ForStmt(AssignStmt(Id(j), IntegerLit(0)), BinExpr(<, Id(j), IntegerLit(2)), BinExpr(+, Id(j), IntegerLit(1)), BlockStmt([AssignStmt(ArrayCell(flag, [Id(i)]), Id(j)), AssignStmt(Id(cur), BinExpr(+, Id(cur), BinExpr(*, Id(j), ArrayCell(e, [Id(i)])))), CallStmt(backtrack, BinExpr(+, Id(i), IntegerLit(1))), AssignStmt(Id(cur), BinExpr(-, Id(cur), BinExpr(*, Id(j), ArrayCell(e, [Id(i)]))))]))]))
+])

@@ -1,0 +1,8 @@
+
+            foo1: function integer(x: integer, y: float) {
+                return foo2(5, 3.1e10);
+            }
+            foo2: function float(x: float, y: integer) {
+                return foo1(3.1e10, 5);
+            }
+        

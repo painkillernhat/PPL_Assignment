@@ -1,0 +1,8 @@
+
+            main: function void() {
+                do  {
+                    cont() a;
+                }
+                while (a != 10);
+            }
+        

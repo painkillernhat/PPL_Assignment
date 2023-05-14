@@ -1,0 +1,7 @@
+
+            main: function void() {
+                while((a != b) && (b != c) && (c!= 0)) {
+                    /*TODO */
+                }
+            }
+        

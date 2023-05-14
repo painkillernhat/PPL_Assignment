@@ -1,0 +1,9 @@
+Program([
+	VarDecl(a, AutoType, IntegerLit(1))
+	VarDecl(b, AutoType, IntegerLit(2))
+	VarDecl(c, AutoType, StringLit( ))
+	VarDecl(d, AutoType, StringLit(\t))
+	VarDecl(_, AutoType, StringLit(\r))
+	VarDecl(__, AutoType, ArrayLit([ArrayLit([IntegerLit(1), IntegerLit(3)])]))
+	VarDecl(__init__, AutoType, Id(self))
+])

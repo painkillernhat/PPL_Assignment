@@ -1,0 +1,10 @@
+check: function boolean() {
+            fill(vis + 1, vis + n + 1, false);
+            dfs(node[1]);
+            for (i = 1, i <= num_node, i + 1) {
+                if (!vis[node[i]]) {
+                    return false;
+                }
+            }
+            return true;
+        }

@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([ForStmt(AssignStmt(Id(i), FuncCall(foo, [])), BinExpr(<, Id(i), FuncCall(goo, [])), BinExpr(+, Id(i), FuncCall(hoo, [])), BlockStmt([DoWhileStmt(UnExpr(!, FuncCall(zoo, [UnExpr(!, FuncCall(foo, [UnExpr(!, FuncCall(goo, [UnExpr(-, FuncCall(hoo, []))]))]))])), BlockStmt([AssignStmt(Id(i), FuncCall(zoo, []))]))]))]))
+])

@@ -1,0 +1,13 @@
+  myAtoi: function integer(s: string) {
+        len, num, i: auto = s::size(), 0.0, 0;
+        while(s[i] == " "){
+            i = i + 1;
+        }
+        positive, negative: boolean = (s[i] == "+"), (s[i] == "-");
+        while(i < len && (s[i] >= "0") && (s[i] <= "9")){
+            num = num*10 + (s[i]-"0");
+            i = i + 1;
+        }
+        
+        return int(num);
+    }

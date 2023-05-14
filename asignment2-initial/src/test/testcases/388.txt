@@ -1,0 +1,9 @@
+singleNumber: function integer(nums: integer) inherit Expressions { 
+       a: array [5,5,5,5,5] of integer;
+	   while(x < nums)
+		   a[x] = a[x] + 1;
+	   while(z < a)
+		   if(z::second==1)
+			   return z::first;
+	   return -1;
+    }

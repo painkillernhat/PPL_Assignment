@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], Foo, BlockStmt([CallStmt(print, StringLit(------------------)), CallStmt(print, StringLit(| \t \t \t \t |)), CallStmt(print, StringLit(| \r \r \r \r |)), CallStmt(print, StringLit(| \b \b \b \b |)), CallStmt(print, StringLit(------------------)), AssignStmt(Id(foo), Id(a))]))
+])

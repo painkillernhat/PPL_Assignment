@@ -1,0 +1,21 @@
+backtrack: function void(i: integer, inherit out m: integer) {
+            cur: integer = check();
+            if (i >= m) {
+                if (check()) {
+                    res = min(res, cur);
+                }
+                return;
+            }
+            j: integer;
+            for (j = 0, j < 2, j+1) {
+                i = j;
+                cur = cur + j * i;
+                backtrack(i + 1);
+                cur = cur - j * i;
+            }
+        }
+        check: function boolean() {
+                return 1;
+            }
+        min: function void(x: integer, y: float) {}
+        main: function void () {}

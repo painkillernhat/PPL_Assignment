@@ -1,0 +1,12 @@
+ foo: function integer (a: auto, b: auto)
+            {
+            
+            }
+            bar: function auto ()
+            {
+                foo(1.1,1);
+                foo(1,2);
+                c: integer = bar();
+                
+            }
+            main: function void() {}

@@ -1,0 +1,6 @@
+Program([
+	VarDecl(column, AutoType)
+	VarDecl(category, AutoType)
+	VarDecl(command, AutoType)
+	FuncDecl(main, VoidType, [], None, BlockStmt([CallStmt(print, StringLit(FROM ), Id(column), StringLit(\n), StringLit(SELECT ), Id(category), StringLit(\n), StringLit(WHERE ), ArrayCell(command, [IntegerLit(0), IntegerLit(0)]), ArrayCell(command, [IntegerLit(0), IntegerLit(1)]), ArrayCell(command, [IntegerLit(1), IntegerLit(0)]), ArrayCell(command, [IntegerLit(1), IntegerLit(1)]), StringLit(\n)), ReturnStmt()]))
+])

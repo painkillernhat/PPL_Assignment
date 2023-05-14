@@ -1,0 +1,9 @@
+
+        foo: function integer (a: boolean, b: float)
+            {
+                if (( 1 != true) && ( b == a))
+                {
+                
+                }
+            }
+            main: function void() {}

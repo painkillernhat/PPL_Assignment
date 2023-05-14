@@ -1,0 +1,1 @@
+Type mismatch in expression: BinExpr(>=, BinExpr(&&, BinExpr(%, BinExpr(*, IntegerLit(3), IntegerLit(5)), IntegerLit(6)), IntegerLit(1)), IntegerLit(0))

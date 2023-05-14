@@ -1,0 +1,5 @@
+result: integer = 123_456.789e10;
+    MAX_SIZE: auto = 3 * int(Math::pow(10, 4));
+    TOTAL_SIZE: auto = MAX_SIZE * 2 + 1;
+    numOccurrence: array [100] of boolean = a[TOTAL_SIZE];
+    main: function void() {}

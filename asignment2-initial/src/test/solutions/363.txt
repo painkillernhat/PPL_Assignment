@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(removeElement, IntegerType, [Param(nums, ArrayType([100], IntegerType)), Param(val, IntegerType)], None, BlockStmt([VarDecl(j, IntegerType, IntegerLit(0)), WhileStmt(BinExpr(%, Id(x), Id(v)), BlockStmt([IfStmt(BinExpr(!=, Id(x), Id(val)), BlockStmt([AssignStmt(ArrayCell(v, [Id(j)]), Id(x)), AssignStmt(Id(j), BinExpr(+, Id(j), IntegerLit(1)))]))])), ReturnStmt(Id(j))]))
+])

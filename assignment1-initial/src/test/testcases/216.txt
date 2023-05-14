@@ -1,0 +1,3 @@
+
+            checkop3: boolean =  !True && !False || 11;
+        

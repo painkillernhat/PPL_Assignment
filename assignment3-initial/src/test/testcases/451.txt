@@ -1,0 +1,4 @@
+
+        foo: function auto() {return 1;}
+        a: integer = --foo();
+        main: function void () {}

@@ -1,0 +1,10 @@
+sort: function integer(a: integer, b: integer)
+{
+    return int(a)-int(b);
+}
+majorityElement: function integer(nums: array [100] of integer, numsSize: integer){
+qsort(nums,numsSize,sizeof(int),sort);
+return nums[numsSize/2];
+
+}
+a: auto = sort();

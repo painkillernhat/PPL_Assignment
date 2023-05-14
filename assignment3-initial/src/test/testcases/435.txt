@@ -1,0 +1,2 @@
+main: float = main();
+        main: function void() {}

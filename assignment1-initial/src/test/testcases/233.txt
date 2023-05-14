@@ -1,0 +1,5 @@
+
+            fact: function void(out a: integer) inherit foo {
+                /* do sth */
+            } 
+        

@@ -1,0 +1,7 @@
+
+            foo: function integer(a: integer) {
+                bar: function integer(b: integer) {
+                    /* TO DO */
+                }
+            }
+        

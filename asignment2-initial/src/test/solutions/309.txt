@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(decrem2, VoidType, [InheritOutParam(a, IntegerType)], None, BlockStmt([WhileStmt(BinExpr(<, Id(a), IntegerLit(10)), BlockStmt([AssignStmt(Id(a), BinExpr(-, Id(a), IntegerLit(1)))]))]))
+])

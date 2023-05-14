@@ -1,0 +1,6 @@
+
+            main: function void() {
+                while (True)
+                    a: string = "ab" + "c";
+            }
+        

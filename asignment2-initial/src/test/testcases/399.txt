@@ -1,0 +1,8 @@
+main: function void() inherit Foo {
+            print("------------------");
+            print("| \t \t \t \t |"); 	
+            print("| \r \r \r \r |"); 
+            print("| \b \b \b \b |"); 
+            print("------------------");
+            foo = a;
+        }

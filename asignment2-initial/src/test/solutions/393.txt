@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([ReturnStmt(FuncCall(compose_comp, [FuncCall(compose, [FuncCall(foo, [FuncCall(goo, [FuncCall(hoo, [FuncCall(doo, [FuncCall(zoo, [IntegerLit(1)])])])])])])]))]))
+])

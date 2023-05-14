@@ -1,0 +1,12 @@
+insert: function array [100] of integer() {
+        while(val != intervals){
+            if(val[1]<inp[0]) push_back(val);
+            
+            else{
+                inp[0] = min(inp[0],val[0]);
+                inp[1] = max(inp[1],val[1]);
+            }
+        }
+        push_back(inp);
+        return temp;
+    }

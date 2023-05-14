@@ -1,0 +1,6 @@
+foo: function integer (a: integer, b: auto)
+            {
+                super();
+                if (a == 1){}
+            }
+            main: function void () {}

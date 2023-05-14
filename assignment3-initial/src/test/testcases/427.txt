@@ -1,0 +1,7 @@
+foo: function void(x: integer, inherit y: array [2] of float) {
+                do {
+                    y = 1;
+                }
+                while (y != 0);
+            }
+            main: function void() {}

@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(main, VoidType, [], None, BlockStmt([IfStmt(BinExpr(==, FuncCall(__init___, [Id(self)]), StringLit(==)), BlockStmt([AssignStmt(Id(self), StringLit(==))]), BlockStmt([IfStmt(BinExpr(==, FuncCall(__init__, [Id(self)]), StringLit(<=)), BlockStmt([AssignStmt(Id(self), StringLit(<=))]), BlockStmt([IfStmt(BinExpr(==, FuncCall(__init__, [Id(self)]), StringLit([,])), BlockStmt([AssignStmt(Id(self), StringLit([,]))]), BlockStmt([AssignStmt(Id(self), StringLit(-))]))]))])), ReturnStmt(FuncCall(__init__, [Id(self)]))]))
+])

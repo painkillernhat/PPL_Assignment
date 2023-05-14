@@ -1,0 +1,3 @@
+Program([
+	FuncDecl(goo, VoidType, [], None, BlockStmt([ReturnStmt(ArrayCell(arr, [BinExpr(::, IntegerLit(2), IntegerLit(3))]))]))
+])

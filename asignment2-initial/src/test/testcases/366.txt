@@ -1,0 +1,39 @@
+safeRow: function boolean(board: array [100] of integer, row: integer, col: integer, num: string)
+{
+for (i = 0, i < 9, i+1)
+{
+if (board[i,col] == num && (i != row))
+{
+return false;
+}
+}
+return true;
+}
+safeCol: function boolean(board: array [100] of integer, row: integer, col: integer, num: string)
+{
+for (i = 0, i < 9, i+1)
+{
+if (board[row,i] == num && (i != col))
+{
+return false;
+}
+}
+return true;
+}
+safeGrid: function boolean(board: array [100] of integer, row: integer, col: integer, num: string)
+{
+rowfact: integer = row - row % 3;
+colfact: integer = col - col % 3;
+for (i = 0, i < 3, i+1)
+{
+for (j = 0, j < 3, j+1)
+{
+r, c: integer = i + (row - row % 3), j + (col - col % 3);
+if (board[r,c] == num && (r != row) && (c != col))
+{
+return false;
+}
+}
+}
+return true;
+}

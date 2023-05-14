@@ -1,0 +1,7 @@
+
+            main: function void() {
+                break {
+                    a = a - 1;
+                };
+            }
+        

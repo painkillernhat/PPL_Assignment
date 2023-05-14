@@ -1,0 +1,5 @@
+
+            goo: function void() {
+                while a != 10 {}
+            } 
+        

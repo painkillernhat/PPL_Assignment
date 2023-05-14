@@ -1,0 +1,7 @@
+sort: function integer(a: integer, b: integer)
+{
+    return a - b;
+}
+
+a: auto = sort();
+main: function void() {}

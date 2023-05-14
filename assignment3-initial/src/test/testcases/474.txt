@@ -1,0 +1,6 @@
+bar: function void (a: float) inherit foo{
+                preventDefault();
+                super(a);
+            } 
+            foo: function auto() {} 
+            main: function void() {}

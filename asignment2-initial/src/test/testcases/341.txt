@@ -1,0 +1,15 @@
+process: function integer(data: array [100] of integer, host: array [100] of float, temp: array [100,100] of string) {
+            sum: integer = 0;
+    for (a = 0, a < size(), a + 1) {
+        if (stop(temp)) break;
+        i,j,w: integer = data[a] *i, data[a] *j, data[a] * w;
+        //if (host[i] * host[j] == 0) continue;
+        if (temp[i] + temp[j] == 0) continue;
+        else {
+            sum = sum + w;
+            temp[i] = 0;
+            temp[j] = 0;
+        }
+    }
+    return sum;
+}

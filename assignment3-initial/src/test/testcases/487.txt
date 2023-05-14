@@ -1,0 +1,4 @@
+a: string = "1";
+            c: string;
+            d: string = a::c + "2";
+            main: function void() {}

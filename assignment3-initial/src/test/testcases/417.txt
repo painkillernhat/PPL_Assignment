@@ -1,0 +1,7 @@
+
+        a: float;
+        b: integer;
+        a: boolean;
+        main: function void() {
+                return;
+            } 

@@ -1,0 +1,21 @@
+isPalindrome: function boolean(s:string) {
+
+            // if not alpha numeric increase/decrement pointer respectiverly
+            if(!isalnum(int(startChar))){
+                start = start + 1;
+                continue;
+            }
+            if(!isalnum(int(lastChar))){
+                end = end - 1;
+                break;
+            }
+
+            // if char match go for next char
+            if(startChar==lastChar){
+                start = start + 1;
+                end = end - 1;
+            }else{
+                return false;
+            }
+        return true;
+    }

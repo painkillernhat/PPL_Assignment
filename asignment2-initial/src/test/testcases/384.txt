@@ -1,0 +1,9 @@
+main: function void() {
+            readint();
+            printint();
+            readfloat();
+            printfloat(); // change writeFloat to printFloat
+            readbool();
+            printbool();
+            readstr();
+        }
