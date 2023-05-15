@@ -161,11 +161,24 @@ class CodeGenVisitor(BaseVisitor):
 
     def visitAssignStmt(self, ast, o): pass
     def visitBlockStmt(self, ast, o): pass
-    def visitIfStmt(self, ast, o): pass
+    def visitIfStmt(self, ast, o):
+        cond, typ = self.visit(ast.cond, Access(o.frame, o.sym, False, False))
+        flabel = o.frame.getNewLabel() # False Label
+        elabel = o.frame.getNewLabel() # Exit Label
+        self.emit.printout(cond)
+        self.emit.printout(self.emit.emitIFFALSE(flabel, o.frame))
+        self.visit(ast.tstmt, o)
+        self.emit.printout(self.emit.emitGOTO(elabel, o.frame))
+        self.emit.printout(self.emit.emitLABEL(flabel, o.frame))
+        if ast.fstmt is not None:
+            self.visit(ast.fstmt, o)
+        self.emit.printout(self.emit.emitLABEL(elabel, o.frame))
+
     def visitForStmt(self, ast, o): pass
     def visitWhileStmt(self, ast, o): pass
     def visitDoWhileStmt(self, ast, o): pass
     def visitBreakStmt(self, ast, o): pass
+
     def visitContinueStmt(self, ast, o): pass
     def visitReturnStmt(self, ast, o): pass
     def visitCallStmt(self, ast, o): pass
@@ -229,11 +242,26 @@ class CodeGenVisitor(BaseVisitor):
     def visitUnExpr(self, ast, o):
         valc, valt = self.visit(ast.val, o)
         if ast.op in ['!']:
-            return
+            return valc + self.emit.emitNOT(valt, o.frame), valt
         elif ast.op in ['-']:
             return valc + self.emit.emitNEGOP(valt, o.frame), valt
     
-    def visitId(self, ast, o): pass
+    def visitId(self, ast, o):
+        if o.isLeft == False:
+            for x in o.sym:
+                if x.name == ast.name:
+                    if type(x.value) is Index:
+                        return self.emit.emitREADVAR(x.name, x.mtype, x.value.value, o.frame), x.mtype
+                    else:
+                        return self.emit.emitGETSTATIC(x.value.value + "." + x.name, x.mtype, o.frame), x.mtype
+        else:
+            for x in o.sym:
+                if x.name == ast.name:
+                    if type(x.value) is Index:
+                        return self.emit.emitWRITEVAR(x.name, x.mtype, x.value.value, o.frame), x.mtype
+                    else:
+                        return self.emit.emitPUTSTATIC(x.value.value + "." + x.name, x.mtype, o.frame), x.mtype
+    
     def visitArrayCell(self, ast, o): pass
 
     def visitIntegerLit(self, ast, o):
