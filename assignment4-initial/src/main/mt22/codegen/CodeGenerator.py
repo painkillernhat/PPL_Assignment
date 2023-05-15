@@ -29,13 +29,20 @@ class CodeGenerator:
 
     def init(self):
         return [Symbol("readInteger", MType(list(), IntegerType()), CName(self.libName)),
-                Symbol("printInteger", MType([IntegerType()], VoidType()), CName(self.libName)),
-                Symbol("readFloat", MType(list(), FloatType()), CName(self.libName)),
-                Symbol("printFloat", MType([FloatType()], VoidType()), CName(self.libName)),
-                Symbol("readBoolean", MType(list(), BooleanType()), CName(self.libName)),
-                Symbol("printBoolean", MType([BooleanType()], VoidType()), CName(self.libName)),
-                Symbol("readString", MType(list(), StringType()), CName(self.libName)),
-                Symbol("printString", MType([StringType()], VoidType()), CName(self.libName)),
+                Symbol("printInteger", MType(
+                    [IntegerType()], VoidType()), CName(self.libName)),
+                Symbol("readFloat", MType(list(), FloatType()),
+                       CName(self.libName)),
+                Symbol("printFloat", MType(
+                    [FloatType()], VoidType()), CName(self.libName)),
+                Symbol("readBoolean", MType(
+                    list(), BooleanType()), CName(self.libName)),
+                Symbol("printBoolean", MType(
+                    [BooleanType()], VoidType()), CName(self.libName)),
+                Symbol("readString", MType(
+                    list(), StringType()), CName(self.libName)),
+                Symbol("printString", MType(
+                    [StringType()], VoidType()), CName(self.libName)),
                 ]
 
     def gen(self, ast, path):
@@ -143,25 +150,25 @@ class CodeGenVisitor(BaseVisitor):
         self.emit.printout(self.emit.emitENDMETHOD(frame))
         frame.exitScope()
 
-    def visitVarDecl(self, ast, param): pass
-    def visitParamDecl(self, ast, param): pass
-    def visitFuncDecl(self, ast, param): pass
+    def visitVarDecl(self, ast, o): pass
+    def visitParamDecl(self, ast, o): pass
+    def visitFuncDecl(self, ast, o): pass
 
     # def visitFuncDecl(self, ast, o):
     #     frame = Frame(ast.name, ast.returnType)
     #     self.genMETHOD(ast, o.sym, frame)
     #     return Symbol(ast.name, MType([x.typ for x in ast.param], ast.returnType), CName(self.className))
 
-    def visitAssignStmt(self, ast, param): pass
-    def visitBlockStmt(self, ast, param): pass
-    def visitIfStmt(self, ast, param): pass
-    def visitForStmt(self, ast, param): pass
-    def visitWhileStmt(self, ast, param): pass
-    def visitDoWhileStmt(self, ast, param): pass
-    def visitBreakStmt(self, ast, param): pass
-    def visitContinueStmt(self, ast, param): pass
-    def visitReturnStmt(self, ast, param): pass
-    def visitCallStmt(self, ast, param): pass
+    def visitAssignStmt(self, ast, o): pass
+    def visitBlockStmt(self, ast, o): pass
+    def visitIfStmt(self, ast, o): pass
+    def visitForStmt(self, ast, o): pass
+    def visitWhileStmt(self, ast, o): pass
+    def visitDoWhileStmt(self, ast, o): pass
+    def visitBreakStmt(self, ast, o): pass
+    def visitContinueStmt(self, ast, o): pass
+    def visitReturnStmt(self, ast, o): pass
+    def visitCallStmt(self, ast, o): pass
     # def visitCallStmt(self, ast, o):
     #     ctxt = o
     #     frame = ctxt.frame
@@ -177,29 +184,70 @@ class CodeGenVisitor(BaseVisitor):
     #     self.emit.printout(self.emit.emitINVOKESTATIC(
     #         cname + "/" + ast.method.name, ctype, frame))
 
-
     # def visitBinaryOp(self, ast, o):
     #     e1c, e1t = self.visit(ast.left, o)
     #     e2c, e2t = self.visit(ast.right, o)
     #     return e1c + e2c + self.emit.emitADDOP(ast.op, e1t, o.frame), e1t
 
-    def visitBinExpr(self, ast, param): pass
-    def visitUnExpr(self, ast, param): pass
-    def visitId(self, ast, param): pass
-    def visitArrayCell(self, ast, param): pass    
+    def visitBinExpr(self, ast, o):
+        e1c, e1t = self.visit(ast.left, o)
+        e2c, e2t = self.visit(ast.right, o)
+        if ast.op in ['+', '-']:
+            if type(e1t) is IntegerType and type(e2t) is IntegerType:
+                return e1c + e2c + self.emit.emitADDOP(ast.op, IntegerType(), o.frame), IntegerType()
+            else:
+                if type(e1t) is IntegerType:
+                    e1c += self.emit.emitI2F(o.frame)
+                if type(e2t) is IntegerType:
+                    e2c += self.emit.emitI2F(o.frame)
+                return e1c + e2c + self.emit.emitADDOP(ast.op, FloatType(), o.frame), FloatType()
+        elif ast.op in ['*', '/']:
+            if type(e1t) is IntegerType and type(e2t) is IntegerType:
+                return e1c + e2c + self.emit.emitMULOP(ast.op, IntegerType(), o.frame), IntegerType()
+            else:
+                if type(e1t) is IntegerType:
+                    e1c += self.emit.emitI2F(o.frame)
+                if type(e2t) is IntegerType:
+                    e2c += self.emit.emitI2F(o.frame)
+                return e1c + e2c + self.emit.emitMULOP(ast.op, FloatType(), o.frame), FloatType()
+        elif ast.op in ['%']:
+            return e1c + e2c + self.emit.emitMOD(o.frame), IntegerType()
+        elif ast.op in ['>', '<', '>=', '<=']:
+            if type(e1t) is IntegerType and type(e2t) is IntegerType:
+                return e1c + e2c + self.emit.emitREOP(ast.op, IntegerType(), o.frame), BooleanType()
+            else:
+                if type(e1t) is IntegerType:
+                    e1c += self.emit.emitI2F(o.frame)
+                if type(e2t) is IntegerType:
+                    e2c += self.emit.emitI2F(o.frame)
+                return e1c + e2c + self.emit.emitREOP(ast.op, FloatType(), o.frame), BooleanType()
+        elif ast.op in ['==', '!=']:
+            return e1c + e2c + self.emit.emitREOP(ast.op, IntegerType(), o.frame), BooleanType()
+        elif ast.op in ['::']:
+            return
+
+    def visitUnExpr(self, ast, o):
+        valc, valt = self.visit(ast.val, o)
+        if ast.op in ['!']:
+            return
+        elif ast.op in ['-']:
+            return valc + self.emit.emitNEGOP(valt, o.frame), valt
+    
+    def visitId(self, ast, o): pass
+    def visitArrayCell(self, ast, o): pass
 
     def visitIntegerLit(self, ast, o):
         return self.emit.emitPUSHICONST(ast.value, o.frame), IntegerType()
-    
+
     def visitFloatLit(self, ast, o):
         return self.emit.emitPUSHFCONST(ast.value, o.frame), FloatType()
-    
+
     def visitStringLit(self, ast, o):
         return self.emit.emitPUSHCONST(ast.value, StringType(), o.frame), StringType()
-    
+
     def visitBooleanLit(self, ast, o):
         return self.emit.emitPUSHICONST(str(ast.value), o.frame), BooleanType()
-    
+
     def visitArrayLit(self, ast, o):
         code = list()
         typ = list()
@@ -207,10 +255,9 @@ class CodeGenVisitor(BaseVisitor):
             ecode, etyp = self.visit(ele, Access(o.frame, o.sym, False, False))
             code += list(ecode)
             typ += list(etyp)
-        
         return code, typ
 
-    def visitFuncCall(self, ast, param): pass
+    def visitFuncCall(self, ast, o): pass
 
     def visitIntegerType(self, ast, o): return ast
     def visitFloatType(self, ast, o): return ast
