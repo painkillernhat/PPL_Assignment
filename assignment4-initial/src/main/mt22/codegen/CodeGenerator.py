@@ -150,16 +150,42 @@ class CodeGenVisitor(BaseVisitor):
         self.emit.printout(self.emit.emitENDMETHOD(frame))
         frame.exitScope()
 
-    def visitVarDecl(self, ast, o): pass
+    def visitVarDecl(self, ast, o):
+        if o.frame is not None:  # Local, parameter declaration
+            idx = o.frame.getNewIndex()
+            slabel = o.frame.getStartLabel()
+            elabel = o.frame.getEndLabel()
+            self.emit.printout(self.emit.emitVAR(idx, ast.name, ast.typ, slabel, elabel, Access(o.frame, o.sym, False, False)))
+            o.sym.append(Symbol(ast.name, ast.typ, Index(idx)))
+        else: # Global declaration
+            self.emit.printout(self.emit.emitATTRIBUTE(ast.name, ast.typ, False, ""))
+            o.sym.append(Symbol(ast.name, ast.typ, CName(self.className)))
+        if ast.init is not None:
+            astmt = AssignStmt(Id(ast.name), ast.init)
+            if o.frame is not None:
+                self.visit(astmt, o)
+            # else:
+            #     return
+        return o
+    
     def visitParamDecl(self, ast, o): pass
-    def visitFuncDecl(self, ast, o): pass
+    
+    def visitFuncDecl(self, ast, o):
+        frame = Frame(ast.name, ast.returnType)
+        self.genMETHOD(ast, o.sym, frame)
+        o.sym.append(Symbol(ast.name, MType([x.typ for x in ast.param], ast.returnType), CName(self.className)))
+        return o
 
-    # def visitFuncDecl(self, ast, o):
-    #     frame = Frame(ast.name, ast.returnType)
-    #     self.genMETHOD(ast, o.sym, frame)
-    #     return Symbol(ast.name, MType([x.typ for x in ast.param], ast.returnType), CName(self.className))
-
-    def visitAssignStmt(self, ast, o): pass
+    def visitAssignStmt(self, ast, o):
+        rcode, rtyp = self.visit(ast.rhs, Access(o.frame, o.sym, False, False))
+        lcode, ltyp = self.visit(ast.lhs, Access(o.frame, o.sym, True, False))
+        if type(ast.rhs) is not ArrayLit:
+            if type(rtyp) is IntegerType and type(ltyp) is FloatType:
+                rcode += self.emit.emitI2F(o.frame)
+            self.emit.printout(rcode + lcode)
+        else:
+            return
+    
     def visitBlockStmt(self, ast, o): pass
     def visitIfStmt(self, ast, o):
         cond, typ = self.visit(ast.cond, Access(o.frame, o.sym, False, False))
